@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" type="module" defer></script>
+	<title>Image_editor v 1.2</title>
+</head>
+<body>
+    <div class="top">
+        <div class="items">
+            <div class="icons">
+                <img src="img/tools.png" alt="">
+            </div>
+            <ul>
+                <li><div class="item tools" title="eraser"><img src="img/eraser.png" alt=""></div></li>
+                <li><div class="item tools" title="brush" ><img src="img/brush.png" alt=""></div></li>
+                <li><div class="item tools" title="paint-bucket" ><img src="img/paint-bucket.png" alt=""></div></li>
+            </ul>
+        </div>
+        <div class="items shapes">
+            <div class="icons">
+                <img src="img/shapes.png" alt="">
+            </div>
+            <ul>
+                <li><div class="item tools" title="circle"><img src="img/circle.png" alt=""></div></li>
+                <li><div class="item tools"  title="triangle" ><img src="img/triangle.png" alt=""></div></li>
+                <li><div class="item tools"  title="rectangle"><img src="img/rectangle.png" alt=""></div></li>
+                <li><div class="item tools"  title="line"><img src="img/line.png" alt=""></div></li>
+            </ul>
+        </div>
+        <div class="items files">
+            <div class="icons">
+                <img src="img/open.png" alt="">
+            </div>
+            <ul>
+                <li><div class="item commands" title="save"><img src="img/save.png" alt=""></div></li>
+                <li><div class="item commands" title="open"><img src="img/open.png" alt=""></div></li>
+            </ul>
+    </div>
+
+    </div>
+    <div class="toolbox_left">
+		<div class="line_width on" title="1 pixels" style="width:4px;height:4px"></div>
+        <div class="line_width" title="3 pixels" style="width:6px;height:6px"></div>
+        <div class="line_width" title="6 pixels" style="width:8px;height:8px"></div>
+        <div class="line_width" title="10 pixels" style="width:10px;height:10px"></div>
+        <div class="line_width" title="12 pixels" style="width:12px;height:12px"></div>
+    </div>
+
+
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <div class="colors">
+        <div class="icons">
+            <img src="img/palette.png" alt="">
+        </div>
+        <ul>
+            <li><div class="color" title="rgba(0,0,0,255)" style="background-color: rgb(0, 0, 0);"></div></li>
+            <li><div class="color" title="rgba(255,0,0,255)" style="background-color: rgb(255, 0, 0)"></div></li>
+            <li><div class="color" title="rgba(0,128,0,255)" style="background-color: rgb(0, 128, 0)"></div></li>
+            <li><div class="color" title="rgba(0,0,255,255)" style="background-color: rgb(0, 0, 255)"></div></li>
+            <li><div class="color" title="rgba(255,255,0,255)" style="background-color: rgb(255, 255, 0)"></div></li>
+            <li><div class="color" title="rgba(132,0,255,255)" style="background-color: rgb(132,0,255)"></div></li>
+            <li><div class="color" title="rgba(63,119,116,255)" style="background-color: rgb(63, 119, 116)"></div></li>
+            <li><div class="color" title="rgba(255,166,0,255)" style="background-color: rgb(255,166,0)"></div></li>
+        </ul>
+    </div>
+    <input type="file" id="files" multiple style="display: none;" />
+</body>
