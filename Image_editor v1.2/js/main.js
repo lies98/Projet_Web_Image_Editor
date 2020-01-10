@@ -23,7 +23,7 @@ commands.forEach(item =>{
         let selectedCmd = item.getAttribute("title");
         if (selectedCmd === "open"){
             document.getElementById('files').click();
-            document.getElementById('files').addEventListener("change",handleFileSelect);
+            document.getElementById('files').addEventListener("change",inputFile);
         }
         else if (selectedCmd === "save"){
             let a_element = document.createElement("a");
