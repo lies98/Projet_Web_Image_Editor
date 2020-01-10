@@ -28,6 +28,7 @@ export default class Paint{
             this.saveImageData = this.ctx.getImageData(0,0,this.canvas.clientWidth,this.canvas.clientHeight);
             this.mouseDown=GetMousePosition(e,this.canvas);
             if(this.currentTool === "pencil" || this.currentTool === "brush"){
+             this.ctx.strokeStyle = this.color;
              this.useBrush = true;
              this.ctx.beginPath();
              this.ctx.moveTo(this.mouseDown.x,this.mouseDown.y);
@@ -42,7 +43,7 @@ export default class Paint{
             }
             else if (this.currentTool == "eraser"){
                 this.useBrush = true;
-                this.ctx.strokeStyle = "white"
+                this.ctx.strokeStyle = "white";
                 this.ctx.beginPath();
                 this.ctx.moveTo(this.mouseDown.x,this.mouseDown.y);
             }
@@ -118,6 +119,8 @@ export default class Paint{
         this.ctx.strokeStyle = this.color;
     }
     drawingShape(tool){
+
+        this.ctx.strokeStyle = this.color;
         this.ctx.lineWidth = this.currentLineWidth;
         this.ctx.putImageData(this.saveImageData,0,0);
         this.ctx.beginPath();

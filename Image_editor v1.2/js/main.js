@@ -1,7 +1,7 @@
-
+import HtmlView from "./HtmlView.js";
 import Paint from "./Paint.js"
 
-
+let init = new HtmlView();
 
 let canvas = document.getElementById("canvas");
 let paint = new Paint("canvas");
@@ -102,3 +102,8 @@ colors.forEach(color =>{
         paint.selectedColor = currentColor;
     });
 });
+
+
+
+
+
