@@ -1,15 +1,16 @@
 import HtmlView from "./HtmlView.js";
 import Paint from "./Paint.js"
 
-let init = new HtmlView();
+new HtmlView();
 
 let canvas = document.getElementById("canvas");
-let paint = new Paint("canvas");
-paint.selectedTool = "brush";
-paint.selectedLineWidth = 1;
-paint.selectedColor = "rgba(0,0,0,255)";
 
-let commands = Array.from(document.getElementsByClassName("commands"));
+let paint = new Paint("canvas");
+paint.selectedTool("brush");
+paint.selectedLineWidth(1);
+paint.selectedColor("rgba(0,0,0,255)");
+
+
 let ctx = canvas.getContext('2d');
 const render = () => {
     ctx.canvas.width = document.documentElement.clientWidth * 0.5;
@@ -18,6 +19,7 @@ const render = () => {
 window.addEventListener("resize", render);
 render();
 
+let commands = Array.from(document.getElementsByClassName("commands"));
 commands.forEach(item =>{
     item.addEventListener("mousedown",e=>{
         let selectedCmd = item.getAttribute("title");
@@ -33,6 +35,7 @@ commands.forEach(item =>{
         }
     });
 });
+/*
 commands.forEach(item =>{
     item.addEventListener("touchstart",e=>{
         let selectedCmd = item.getAttribute("title");
@@ -48,7 +51,7 @@ commands.forEach(item =>{
         }
     });
 });
-
+*/
 
  const inputFile = evt =>{
     let files = evt.target.files;
@@ -76,8 +79,8 @@ let tools = Array.from(document.getElementsByClassName("tools"));
 
 tools.forEach(tool =>{
     tool.addEventListener("click",e=>{
-        let selectedTool = tool.getAttribute("title");
-        paint.selectedTool = selectedTool;
+        let selectTool = tool.getAttribute("title");
+        paint.selectedTool(selectTool);
     });
 });
 
@@ -89,8 +92,7 @@ size.forEach(item =>{
         document.querySelector("[title].on").classList.toggle("on");
         item.classList.toggle("on");
         let lw = item.getAttribute("title").replace(" pixels","");
-        console.log(lw);
-        paint.selectedLineWidth = lw;
+        paint.selectedLineWidth(lw);
     });
 });
 
@@ -99,7 +101,7 @@ let colors = Array.from(document.getElementsByClassName("color"));
 colors.forEach(color =>{
     color.addEventListener("click",e => {
         let currentColor = color.getAttribute("title");
-        paint.selectedColor = currentColor;
+        paint.selectedColor(currentColor);
     });
 });
 

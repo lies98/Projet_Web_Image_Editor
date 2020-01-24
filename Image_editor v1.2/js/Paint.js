@@ -108,13 +108,13 @@ export default class Paint{
         });
     }
 
-    set selectedTool(tool){
+    selectedTool(tool){
         this.currentTool = tool;
     }
-    set selectedLineWidth(line_width){
+    selectedLineWidth(line_width){
         this.currentLineWidth = line_width;
     }
-    set selectedColor(color){
+    selectedColor(color){
         this.color = color;
         this.ctx.strokeStyle = this.color;
     }
